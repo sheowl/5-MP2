@@ -28,7 +28,7 @@ int main() {
         }
         cout << endl << "Total Weight: " << totalWeight << endl << "Total Value: " << totalValue << endl; 
     }
-    cout << "Highest value with total with 5kg restriction: " << highestValue; 
+    cout << "Highest value with total with " << maxWeight << "kg restriction: " << highestValue; 
 
  
     return 0;
