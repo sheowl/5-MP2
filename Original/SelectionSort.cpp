@@ -2,7 +2,8 @@
 using namespace std;
 
 //Original and unoptimized code for selection sort
-void selectionSort(int array[], int arrLength){
+int selectionSort(int array[], int arrLength){
+    int intPassCount = 0;
     for(int i = 0; i < (arrLength - 1); i++){
         int min = i;
         for(int j = i + 1; j < arrLength; j++){
@@ -16,7 +17,10 @@ void selectionSort(int array[], int arrLength){
             array[i] = array[min];
             array[min] = temp;
         }
+        
+        intPassCount++;
     }
+    return intPassCount;
 }
 
 void printArray(int array[], int arrLength){
@@ -30,8 +34,9 @@ int main(){
     int arrLength = sizeof(array) / sizeof(array[0]);
 
     cout << "Unsorted Array: "; printArray(array, arrLength);
-    selectionSort(array, arrLength);
+    int intPasses = selectionSort(array, arrLength);
     cout << "\nSorted Array: "; printArray(array, arrLength);
+    cout << "\nNumber of Passes: " << intPasses;
 
     return 0;
 }
