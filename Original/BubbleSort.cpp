@@ -25,7 +25,7 @@ void printArray(int intArray[], int intSize){
 }
 
 int main(){
-    int intArray[] = {16, 14, 5, 6, 8, 24, 32, 81};
+    int intArray[] = {17, 48, 4, 24, 63, 19, 73};
     int intSize = sizeof(intArray) / sizeof(intArray[0]);
 
 	// Prints unsorted array
