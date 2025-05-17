@@ -25,14 +25,15 @@ void printArray(int intArray[], int intSize){
 }
 
 int main(){
-    int intArray[] = {63, 48, 73, 24, 17, 19};
+    int intArray[] = {16, 14, 5, 6, 8, 24, 32, 81};
     int intSize = sizeof(intArray) / sizeof(intArray[0]);
-    int intPasses = bubbleSort(intArray, intSize);
 
 	// Prints unsorted array
     cout << "Unsorted Array: ";
     printArray(intArray, intSize);
 
+	int intPasses = bubbleSort(intArray, intSize);
+	
 	// Prints sorted array
     cout << "Sorted Array: ";
     printArray(intArray, intSize);
