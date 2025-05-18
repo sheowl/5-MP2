@@ -2,34 +2,38 @@
 using namespace std;
 
 int main() {
-    int item[4][2] = {{1, 1}, {2, 6}, {3, 10}, {2, 7}};
-    int n = 4;
-    int mask, i;
-    int totalWeight, totalValue;
-    int maxWeight = 5, highestValue = 0;
-    for(mask = 0; mask < (1 << n); mask++){ 
-        totalWeight = 0; 
-        totalValue = 0; 
+    int arrItem[4][2] = {{1, 1}, {2, 6}, {3, 10}, {2, 7}}; //{weight, value}
+    /*
+    Item 1: Wt: 1 V: 1
+    Item 2: Wt: 2 V: 6
+    Item 3: Wt: 3 V: 10
+    Item 4: Wt: 2 V: 7
+    */
+    int intSize = 4; //No. of Items
+    int intMask, i; 
+    int intTotalWeight, intTotalValue;
+    int intMaxWeight = 5, intHighestValue = 0;
+    for(intMask = 0; intMask < (1 << intSize); intMask++){ // to get all possible subsets 
+        intTotalWeight = 0; 
+        intTotalValue = 0; 
         cout << "\nSubset: "; 
-        for(i = 0; i < n; i++){ 
-            if(mask & (1 << i)){ 
-                totalWeight += item[i][0]; 
-                totalValue += item[i][1]; 
+        for(i = 0; i < intSize; i++){ // to know if the item is included in the subset
+            if(intMask & (1 << i)){ //using bitwise AND operation
+                intTotalWeight += arrItem[i][0]; 
+                intTotalValue += arrItem[i][1]; 
                 cout << i + 1 << " "; 
             } 
         }
-        if(totalWeight <= maxWeight){
-            if(highestValue < totalValue){ 
-                highestValue = totalValue; 
+        if(intTotalWeight <= intMaxWeight){ //if current subset item weight does not exceed max weight
+            if(intHighestValue < intTotalValue){  // if current highest value is less than current subset item value 
+                intHighestValue = intTotalValue;  // make the currect subset item value the highest value 
             }
         }
-        else{ 
+        else{ // if current subset item weight exceeds 
             cout << "\nExceeds Max Weight!\n"; 
         }
-        cout << endl << "Total Weight: " << totalWeight << endl << "Total Value: " << totalValue << endl; 
+        cout << endl << "Total Weight: " << intTotalWeight << endl << "Total Value: " << intTotalValue << endl;  //prints every total weight and total value
     }
-    cout << "Highest value with total with " << maxWeight << "kg restriction: " << highestValue; 
-
- 
+    cout << "Highest value with total with " << intMaxWeight << " kg restriction: " << intHighestValue; //prints highest value
     return 0;
 }
