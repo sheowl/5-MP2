@@ -37,6 +37,10 @@ int main() {
         cout << "\nChoose an option within the menu: ";
         cin >> intChoice;
 
+        if(intChoice == 0){
+            break;
+        }
+
         int intTarget;
         cout << "\nEnter value to search: ";
         cin >> intTarget;
@@ -58,9 +62,6 @@ int main() {
             case 3: {
                 TransposeLS objTranspose;
                 intResult = objTranspose.transposeSearch(arrNumbers, intArrSize, intTarget, intPasses);
-                break;
-            }
-            case 0: {
                 break;
             }
             default:
