@@ -61,7 +61,7 @@ int main(){
 	cout << "Unsorted Array: ";
 	printArray(intArray, intSize);
 
-	int intPasses = bidirectionalBubbleSort(intArray, intSize);
+	int intPasses = smartBubbleSort(intArray, intSize);
 
 	// Prints sorted array
 	cout << "Sorted Array: ";
