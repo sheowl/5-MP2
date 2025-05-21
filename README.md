@@ -59,7 +59,7 @@ While these methods may be inefficient for large datasets, investigating and und
 1. **Clone the repository**
    ```bash
    git clone https://github.com/sheowl/5-MP2.git
-   cd main
+   cd 5-MP2
    ```
 
 2. **Compile and run the Code**
